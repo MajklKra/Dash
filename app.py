@@ -87,48 +87,32 @@ app.layout = html.Div(
                         id= 'p3',
                         children = 
                         [
-                            html.Div
+                            html.Button
                             (
                                 children=[
                                             html.Img(src='assets/nurse.svg',  # Vložte cestu k vašemu obrázku
-                                            style={
-                                                'filter': 'brightness(0) saturate(100%) invert(39%) sepia(98%) saturate(5264%) hue-rotate(20deg)',  # Změní barvu obrázku
-                                                'width': '100%',  # Změňte velikost podle potřeby
-                                                'height': '100%',
-                                                'object-fit' : 'contain'})
+                                            )
                                         ],
                                 id='c1',
                             ),
-                            html.Div
+                            html.Button
                             (
                                 children=[
                                             html.Img(src='assets/caduceus.svg',  # Vložte cestu k vašemu obrázku
-                                            style={
-                                                'filter': 'brightness(0) saturate(100%) invert(30%) sepia(70%) saturate(5597%) hue-rotate(208deg) brightness(93%) contrast(101%)',  # Změní barvu obrázku
-                                                'width': '100%',  # Změňte velikost podle potřeby
-                                                'height': '100%',
-                                                'object-fit' : 'contain'})
+                                            )
                                         ],
                                 id='c2',
                             ),
-                            html.Div
+                            html.Button
                             (
                                 html.Img(src='assets/nurse2.svg',  # Vložte cestu k vašemu obrázku
-                                            style={
-                                                'filter': 'brightness(0) saturate(100%) invert(96%) sepia(75%) saturate(7489%) hue-rotate(337deg) brightness(95%) contrast(109%)',  # Změní barvu obrázku
-                                                'width': '100%',  # Změňte velikost podle potřeby
-                                                'height': '100%',
-                                                'object-fit' : 'contain'}),
+                                            ),
                                 id='c3',
                             ),
-                            html.Div
+                            html.Button
                             (
                                 html.Img(src='assets/nurse3.svg',  # Vložte cestu k vašemu obrázku
-                                            style={
-                                                'filter': 'brightness(0) saturate(100%) invert(34%) sepia(56%) saturate(1095%) hue-rotate(78deg) brightness(105%) contrast(83%)',  # Změní barvu obrázku
-                                                'width': '100%',  # Změňte velikost podle potřeby
-                                                'height': '100%',
-                                                'object-fit' : 'contain'}),
+                                        ),
                                 id='c4',
                             )
                         ],   
