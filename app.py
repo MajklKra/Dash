@@ -1,5 +1,6 @@
 import dash
-from dash import html
+from dash import html, dcc, State, callback
+from dash.dependencies import Input, Output 
 
 from datetime import datetime  # aktuální čas a datum
 
@@ -90,30 +91,35 @@ app.layout = html.Div(
                             html.Button
                             (
                                 children=[
-                                            html.Img(src='assets/nurse.svg',  # Vložte cestu k vašemu obrázku
-                                            )
+                                            html.Img(src='assets/nurse.svg', id = 'img1',)
                                         ],
                                 id='c1',
+                                className='',
                             ),
                             html.Button
                             (
                                 children=[
-                                            html.Img(src='assets/caduceus.svg',  # Vložte cestu k vašemu obrázku
-                                            )
+                                            html.Img(src='assets/caduceus.svg', id = 'img2')
                                         ],
                                 id='c2',
+                                className='',
                             ),
                             html.Button
                             (
-                                html.Img(src='assets/nurse2.svg',  # Vložte cestu k vašemu obrázku
-                                            ),
+                                children=[
+                                            html.Img(src='assets/nurse2.svg',  id = 'img3'),
+                                        ],
                                 id='c3',
+                                className='',
                             ),
                             html.Button
                             (
-                                html.Img(src='assets/nurse3.svg',  # Vložte cestu k vašemu obrázku
-                                        ),
+                                children=[
+                                        
+                                        html.Img(src='assets/nurse3.svg',  id = 'img4'),
+                                    ],
                                 id='c4',
+                                className='',
                             )
                         ],   
                 )
@@ -121,7 +127,64 @@ app.layout = html.Div(
     ]
 )
 
+# ************************** Experiment  **************************
+
+@callback(
+    Output('c1', 'className'),
+    Output('c2', 'className'),
+    Output('c3', 'className'),
+    Output('c4', 'className'),
+    Input('c1', 'n_clicks'),
+    Input('c2', 'n_clicks'),
+    Input('c3', 'n_clicks'),
+    Input('c4', 'n_clicks'),
+    prevent_initial_call=True
+)
+
+def toggle_class(n_clicks1, n_clicks2, n_clicks3, n_clicks4):
+    # Urči stavy pro jednotlivá tlačítka
+    classes = ['', '', '', '']
+    
+    # Změna tříd na základě počtu kliknutí
+    if n_clicks1 is not None and n_clicks1 % 2 == 1:
+        classes[0] = 'active-btn'
+    if n_clicks2 is not None and n_clicks2 % 2 == 1:
+        classes[1] = 'active-btn2'
+    if n_clicks3 is not None and n_clicks3 % 2 == 1:
+        classes[2] = 'active-btn3'
+    if n_clicks4 is not None and n_clicks4 % 2 == 1:
+        classes[3] = 'active-btn4'
+    
+    return classes
+
 # ****************************************************************
+
+
+@callback(
+    Output('img1', 'className'),
+    Output('img2', 'className'),
+    Output('img3', 'className'),
+    Output('img4', 'className'),
+    Input('c1', 'n_clicks'),
+    Input('c2', 'n_clicks'),
+    Input('c3', 'n_clicks'),
+    Input('c4', 'n_clicks'),
+    prevent_initial_call=True
+)
+
+def toggle_image_class(n_clicks1, n_clicks2, n_clicks3, n_clicks4):
+    classes = ['', '', '', '']
+
+    if n_clicks1 is not None and n_clicks1 % 2 == 1:
+        classes[0] = 'active-img'
+    if n_clicks2 is not None and n_clicks2 % 2 == 1:
+        classes[1] = 'active-img2'
+    if n_clicks3 is not None and n_clicks3 % 2 == 1:
+        classes[2] = 'active-img3'
+    if n_clicks4 is not None and n_clicks4 % 2 == 1:
+        classes[3] = 'active-img4'
+
+    return classes
 
 
 
