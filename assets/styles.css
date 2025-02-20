@@ -1,0 +1,135 @@
+#hc{
+    background-color: green;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content : space-around;
+    padding-bottom: 10%;
+    box-sizing: border-box;
+}
+
+#c1{
+    width: 15%;
+    height: 70%;
+    /* background-color: red; */
+    border-radius: 10px;
+
+    padding:30px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+
+    box-sizing: border-box; /* Zahrne padding do celkové velikosti */
+    overflow: hidden;     /* Skryje přebytečnou část obrázku */
+}
+
+#c2{
+    width: 15%;
+    height: 70%;
+    /* background-color: blue; */
+    border-radius: 10px;
+
+    padding:30px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+
+    box-sizing: border-box; /* Zahrne padding do celkové velikosti */
+    overflow: hidden;     /* Skryje přebytečnou část obrázku */
+}
+
+#c3{
+    width: 15%;
+    height: 70%;
+    /* background-color: yellow; */
+    border-radius: 10px;
+
+    padding:30px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+
+    box-sizing: border-box; /* Zahrne padding do celkové velikosti */
+    overflow: hidden;     /* Skryje přebytečnou část obrázku */
+
+}
+
+#c4{
+    width: 15%;
+    height: 70%;
+    /* background-color: orange; */
+    border-radius: 10px;
+
+    padding:30px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+
+    box-sizing: border-box; /* Zahrne padding do celkové velikosti */
+    overflow: hidden;     /* Skryje přebytečnou část obrázku */
+}
+
+
+#hc1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+#p1{
+
+    background-color: #1434A4;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+#p2{
+    width:30%;
+    background-color: azure;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10% auto;
+    text-align: center;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Stín */
+}
+
+#sp1{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#sp2{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+#sp3{
+    font-size: 12px;
+}
+
+
+#p3{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    /* background-color: greenyellow; */
+    width: 100%;
+
+
+    align-items: flex-end;
+    justify-content : space-evenly;
+    padding-bottom: 5%;
+    box-sizing: border-box;
+}
+
+
+#c1:active{
+    background-attachment: red;
+
+    image{
+        background-color: white;
+    }
+}
+
