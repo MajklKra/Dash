@@ -1,0 +1,31 @@
+
+.page2 h1{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+    color:#4169E1;
+}
+
+.page2 p{
+    text-align: center;
+    color: red;
+}
+
+.page2{
+
+    background-color: #A7C7E7;
+    height: 100vh;
+   
+    display: flex;
+    flex-direction: column;
+
+    justify-content: start;
+    align-items: center;
+
+}
+
+*,html{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}

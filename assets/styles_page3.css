@@ -1,0 +1,31 @@
+
+.page3 h1{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+    color:#4169E1;
+}
+
+.page3 p{
+    text-align: center;
+    color: red;
+}
+
+.page3{
+
+    background-color: #A7C7E7;
+    height: 100vh;
+   
+    display: flex;
+    flex-direction: column;
+
+    justify-content: start;
+    align-items: center;
+
+}
+
+*,html{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
