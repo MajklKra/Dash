@@ -35,6 +35,6 @@ def display_page(pathname):
         return page_4_layout()  # Načtení obsahu z page_2.py
     
 if __name__ == '__main__':
-    app.run_server(host="0.0.0.0",port=8050,debug=True, ssl_context='adhoc')
+    app.run_server(host="0.0.0.0",port=8080,debug=True, ssl_context='adhoc')
 
 

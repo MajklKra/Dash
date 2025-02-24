@@ -1,95 +1,76 @@
 
-
-/* #c1{
-    width: 15%;
-    height: 70%;
-    /* background-color: red; 
-    border-radius: 10px;
-
-    padding:30px;
-
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-
-    box-sizing: border-box; /* Zahrne padding do celkové velikosti 
-    overflow: hidden;     /* Skryje přebytečnou část obrázku 
-
-    border: none;
-    outline: none;
-
-}
-
-#c2{
-    width: 15%;
-    height: 70%;
-    /* background-color: blue; 
-    border-radius: 10px;
-
-    padding:30px;
-
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-
-    box-sizing: border-box; 
-    overflow: hidden;     
-
-    border: none;
-    outline: none;
-}
-
-#c3{
-    width: 15%;
-    height: 70%;
-    /* background-color: yellow; 
-    border-radius: 10px;
-
-    padding:30px;
-
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-
-    box-sizing: border-box; 
-    overflow: hidden;     
-
-    border: none;
-    outline: none;
-
-}
-
-#c4{
-    width: 15%;
-    height: 70%;
-    /* background-color: orange; 
-    border-radius: 10px;
-
-    padding:30px;
-
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-
-    box-sizing: border-box; /* Zahrne padding do celkové velikosti 
-    overflow: hidden;     
-
-    border: none;
-    outline: none;
-} */
-
-
 #hc1{
+
+    position: relative; /* Přidáno pro relativní pozicování */
+
+
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
+
+    overflow: hidden; /* Skryje přetečení */
+
+    background-image: url('/assets/pokus.jpg');
+    background-size: cover; /* Pokryje celé pozadí */
+    background-position: center;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+
 }
+
+#hc1::before {
+    content: ""; /* Pseudo-element musí mít nějaký obsah */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit; /* Použijeme stejné pozadí jako #hc1 */
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px); /* Efekt rozmazání */
+    z-index: 1; /* Pod obsah */
+}
+
+#hc1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Černý filtr s 50% průhledností */
+    z-index: 1; /* Udržuje filtr nad pozadím, ale pod obsahem */
+}
+
+
+#p1, #p2, #p3 { /* Zajištění, že obsah bude nad rozmazaným pozadím */
+    position: relative;
+    z-index: 2; /* Nad rozmazané pozadí */
+}
+
 
 #p1{
 
-    background-color: #1434A4;
+    /* background-color: rgba(20, 52, 164, 0.8);  */
+
+    background-color: #1434A4;  
     color: white;
     text-align: center;
     padding: 10px;
     width: 100%;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    
 }
 
 #p2{
     width:30%;
     background-color: azure;
+
+    /* background-color: rgba(255, 255, 255, 0.9); */
+
     border: 1px solid gray;
     border-radius: 10px;
     padding: 20px;
@@ -97,6 +78,7 @@
     text-align: center;
 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Stín */
+
 }
 
 #sp1{
@@ -880,6 +862,7 @@ body{
     
         border: none;
         outline: none;
+
     }
 
     #p3{
@@ -887,7 +870,8 @@ body{
     }
 
     #p2{
-        padding: 30px;
+        padding: 40px;
+        width: 40%;
     }
 
     #sp1{
