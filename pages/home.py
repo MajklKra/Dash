@@ -22,7 +22,6 @@ from datetime import datetime  # aktuální čas a datum
 #     ])
 
 
-
 # ---------------------- Čas --------------------------------------------------------------
 
 aktualni_cas = datetime.now()
@@ -43,29 +42,74 @@ nazev_dne = dny[den_v_tydnu]
 # ------------------------------------------------------------------------------------
 
 
+# Získejte počáteční čas
+aktualni_cas = datetime.now()
+datum = aktualni_cas.strftime("%d.%m.%Y")
+cas = aktualni_cas.strftime("%H:%M")
+
+# Získání dne v týdnu
+den_v_tydnu = aktualni_cas.weekday()
+dny = ["Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota", "Neděle"]
+nazev_dne = dny[den_v_tydnu]
+
+# ----------------------   Experiment ----------------------------------------------------------
+
+
+# Callback pro aktualizaci času
+@callback(
+    Output('sp2', 'children'),  # Aktualizujeme sp2
+    Input('interval-component', 'n_intervals')
+)
+
+def update_time(n):
+    aktualni_cas = datetime.now()
+    cas = aktualni_cas.strftime("%H:%M")
+    return cas
+
+# --------------------------------------------------------------------------------------------
+
 def layout():  
-    
+
     return html.Div(
 
 id = 'hc1',
 
 children = [
 
-        html.Div([
-            html.Span("KF1", style={"font-weight": "bold", "color": "White", "font-size": "22px", "margin-right": "20px"}),
-            "Oddělení Kufr HCC-20"],
-            id = 'p1'),
+        # html.Div([
+        #     html.Span("KF1", style={"font-weight": "bold", "color": "White", "font-size": "22px", "margin-right": "20px"}),
+        #     "Oddělení Kufr HCC-20"],
+        #     id = 'p1'),
+
+        # html.Div([
+
+        #                 html.Span(f"{nazev_dne} {datum}", id = "sp1"),
+        #                 html.Br(),
+        #                 html.Span(f"{cas}", id = "sp2"),
+        #                 html.Br(),
+        #                 html.Span('Místnost sester 2', id = "sp3")
+        #             ],
+        #             id = 'p2',
+        # ),
+
 
         html.Div([
-
-                        html.Span(f"{nazev_dne} {datum}", id = "sp1"),
-                        html.Br(),
-                        html.Span(f"{cas}", id = "sp2"),
-                        html.Br(),
-                        html.Span('Místnost sester 2', id = "sp3")
-                    ],
-                    id = 'p2',
-        ),
+                html.Span("KF1", style={"font-weight": "bold", "color": "White", "font-size": "22px", "margin-right": "20px"}),
+                "Oddělení Kufr HCC-20"],
+                id='p1'),
+            html.Div([
+                html.Span(f"{nazev_dne} {datum}", id="sp1"),
+                html.Br(),
+                html.Span(id="sp2"),  # Změna id na sp2, kde se bude aktualizovat čas
+                html.Br(),
+                html.Span('Místnost sester 2', id="sp3")
+            ], id='p2'),
+            # Přidání komponenty Interval pro pravidelnou aktualizaci
+            dcc.Interval(
+                id='interval-component',
+                interval=1*1000,  # 1 sekunda v milisekundách
+                n_intervals=0  # Počáteční počet intervalů
+            ),
 
         html.Div(
 

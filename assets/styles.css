@@ -3,7 +3,6 @@
 
     position: relative; /* Přidáno pro relativní pozicování */
 
-
     display: flex;
     flex-direction: column;
     align-items: center;
