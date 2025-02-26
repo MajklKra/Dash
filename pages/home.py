@@ -154,7 +154,7 @@ children = [
                     (
                         children=[
                                     # html.Img(src='assets/nurse2.svg',  id = 'img3'),
-                                    html.A( html.Img(src='assets/nurse2.svg',  id = 'img3'), href='/page3', style={'color': 'yellow'})
+                                    html.A( html.Img(src='assets/nurse2.svg',  id = 'img3'), href='/key', style={'color': 'yellow'})
                                 ],
                         id='c3',
                         className='',
@@ -164,7 +164,7 @@ children = [
                         children=[
                                 
                                 # html.Img(src='assets/nurse3.svg',  id = 'img4'),
-                                html.A( html.Img(src='assets/nurse3.svg',  id = 'img4'), href='/page4', style={'color': 'yellow'})
+                                html.A( html.Img(src='assets/nurse3.svg',  id = 'img4'), href='/db', style={'color': 'yellow'})
                             ],
                         id='c4',
                         className='',

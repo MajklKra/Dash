@@ -1,0 +1,130 @@
+
+.db{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#cont1{
+    /* background-color: red; */
+    width: 100%;
+
+    justify-content: start;
+    align-items: start;
+}
+
+#cont2{
+    /* background-color: blue;  */
+    width: 100%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#cont3{
+    background-color: 	#B6D0E2;
+    width: 30%;
+    margin-left: 50px;
+    border-radius: 10px;
+
+    box-shadow: 5px 5px 10px gray;
+}
+
+
+.db h1{
+    padding-top: 100px;
+    padding-bottom: 20px;
+    text-align: center;
+    color:#7393B3;
+    text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+#db-input{
+    font-size: 12px;
+    margin-left:50px;
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    text-align: left;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+
+    height: 20px;
+    color: #7393B3 !important;
+}
+
+#submit-btn{
+    margin-left:50px;
+    margin-bottom: 10px; 
+    padding: 5px;
+    border-radius: 5px;
+
+    border: none;
+    outline: none;
+
+    background-color: #7393B3;
+    color: white;
+}
+
+*,html{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+table
+{
+    border-collapse: separate; /* Zruší slučování ohraničení */
+    border-spacing: 0; /* Nastaví mezery mezi buňkami na 0 */
+    /* width: 100%; */
+
+    /* color:#696969; */
+    /* color:	#989898; */
+    color: #7393B3;
+    word-wrap: break-word; 
+    font-family: 'Times New Roman', Times, serif;
+    border-spacing: 0 15px; /* Nastaví mezeru mezi řádky (15px) */
+    font-size: 18px;
+
+    border: none;
+    outline: none;
+
+    text-align: center;
+}
+
+td {
+    /* border: solid 1px #BEBEBE !important; */
+    /* border-style: none solid solid none !important; */
+    padding: 10px !important;
+    /* font-weight: 400; */
+    /* border: 1px solid #ddd; */
+}
+
+th{
+    border-bottom: 1px solid #7393B3 !important;
+    /* border-style: solid solid none solid; */
+    /* border-style: solid solid none none !important; */
+    padding: 10px !important; 
+    font-weight: 700 !important;
+    /*border: 1px solid #ddd; */
+}
+
+table td:nth-child(1),
+table th:nth-child(1) {
+    text-align: center;
+}
+
+table td:nth-child(2),
+table th:nth-child(2) {
+    font-weight: bold;
+}
+
+
