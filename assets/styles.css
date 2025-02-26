@@ -178,9 +178,9 @@
 } */
 
 
-.active-btn {
+/* .active-btn {
     background-color: #D22B2B !important;
-}
+} */
 
 .active-btn2 {
     background-color: #0047AB !important;
@@ -196,9 +196,9 @@
 
 
 
-.active-img {
+/* .active-img {
     filter: brightness(0) invert(1) !important;
-}
+} */
 
 .active-img2 {
     filter: brightness(0) invert(1) !important;
@@ -219,6 +219,14 @@ body{
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+
+
+#c1{
+    cursor: pointer;
+}
+
+
 
 
 /* **************************************   RESPONSIVITA  ***************************************************** */
