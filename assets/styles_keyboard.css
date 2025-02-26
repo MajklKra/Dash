@@ -203,5 +203,61 @@
 {
     /* #hlavni{
         background-color: blue;
+    }
+
+    #keyboard{
+        background-color: red;
+    }
+
+    #keyboard2{
+        background-color: green;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: start;
+        justify-content: start;
+    }
+
+    #display{
+        background-color: yellow;
     } */
+}
+
+/* ********************************************************************************* */
+
+
+#c-btn-return{
+    /* background-color:brown; */
+    height : 10%; 
+    width : 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: end;
+
+    padding-right: 15px;
+
+}
+
+#btn-return{
+    width: 60px;
+    height: 60px;
+    background-color: #4CBB17;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+
+    padding: 5px;
+    box-shadow: 5px 5px 10px gray;
+}
+
+
+#btn-return img{
+    
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(38deg) brightness(107%) contrast(101%);;
+    width: 100%;
+    height: 100%;
+    object-fit : contain;
 }

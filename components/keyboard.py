@@ -90,9 +90,9 @@ def layout():
         
         return html.Div(id = "hlavni", 
                 children=[
-                                 
-                    html.Div(id='keyboard', children=[
                           
+                    html.Div(id='keyboard', children=[
+
                         dcc.Input(id='input-box', type='text', value=''),
                      
                         html.Div(className='row', children=[
@@ -113,10 +113,23 @@ def layout():
                     ]),
                         
                     html.Div(id='keyboard2', children=[
-                        
+
+                        html.Div( children=[
+                            html.Button
+                                (
+                                    children=[
+                                                # html.Img(src='assets/return.svg',),  
+                                                html.A( html.Img(src='assets/return.svg',), href='/')    
+                                            ],
+                                    id='btn-return', title = "Cesta tam a zpět"
+                                ),
+                            ],id='c-btn-return'), 
+
                         html.Div(id='display', children=[
                             html.Table(id="t2")
                         ]),
 
                     ]),
             ])
+
+
