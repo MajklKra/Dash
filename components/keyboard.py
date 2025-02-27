@@ -10,8 +10,8 @@ def register_callbacks2(app):
         Output('input-box', 'value'),
         [Input(f'key-{char}', 'n_clicks') for char in "qwertyuiopasdfghjklzxcvbnm"] + 
         [Input('clear-button', 'n_clicks')],
-        [State('input-box', 'value'), State('toggle-case-button', 'n_clicks')]
-
+        [Input('bs-button', 'n_clicks')],
+        [State('input-box', 'value'), State('toggle-case-button', 'n_clicks')],
     )
 
     def update_output(*args):
@@ -23,7 +23,7 @@ def register_callbacks2(app):
 
         if button_id == 'clear-button':
             return ''
-
+        
         new_character = button_id.split('-')[1]  
         is_upper = args[-1] % 2 == 1  # Každé liché kliknutí přepíná mezi velkými/malými písmeny
 
@@ -33,7 +33,13 @@ def register_callbacks2(app):
             new_character = new_character.lower()
 
         current_text = args[-2] if args[-2] else ''
-        
+
+        if button_id == 'bs-button':
+
+            current_text = current_text[:-1]
+
+            return current_text
+             
         return current_text + new_character
     
 
@@ -86,6 +92,22 @@ def register_callbacks2(app):
             return ""
 
 
+    @app.callback(
+        [Output('span1', 'style'),
+        Output('span2', 'style'),
+        Output('store-case', 'data')],
+        Input('toggle-case-button', 'n_clicks'),
+        prevent_initial_call=True
+    )
+
+    def toggle_case(n_clicks):
+        is_upper = n_clicks % 2 == 1  # Každé liché kliknutí přepíná mezi velkými/malými písmeny
+
+        if is_upper:
+            return {'font-weight': '900'}, {'font-weight': 'normal'}, {'is_upper': True}
+        else:
+            return {'font-weight': 'normal'}, {'font-weight': '900'}, {'is_upper': False}
+
 def layout():  
         
         return html.Div(id = "hlavni", 
@@ -101,13 +123,20 @@ def layout():
                         html.Div(className='row', children=[
                             html.Button(char.upper(), id=f'key-{char}', n_clicks=0, className='key') for char in "asdfghjkl"
                         ]),
-                        html.Div(className='row', children=[
-                            html.Button(char.upper(), id=f'key-{char}', n_clicks=0, className='key') for char in "zxcvbnm"
-                        ]),
+                        html.Div(className='row', 
+                            children=[
+                                *[html.Button(char.upper(), id=f'key-{char}', n_clicks=0, className='key') for char in "zxcvbnm"] 
+                            ]), 
 
                         html.Div(className='row', children=[
                             html.Button('Vymazat', id='clear-button', n_clicks=0, className='key clear-btn'),
-                            html.Button('A/a', id='toggle-case-button', n_clicks=0, className='key clear-btn')
+                            html.Button([
+                                html.Span('A', id='span1', style={'font-weight': 'normal'}),
+                                '/',
+                                html.Span('a', id='span2', style={'font-weight': '900'})
+                            ], id='toggle-case-button', n_clicks=0, className='key clear-btn'),
+                            dcc.Store(id='store-case', data={'is_upper': True}),
+                            html.Button('←', id='bs-button', n_clicks=0, className='key clear-btn')
                         ]),
 
                     ]),

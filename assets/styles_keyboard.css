@@ -11,7 +11,8 @@
 
     color: #7393B3;
 
-    box-shadow: 5px 5px 10px gray;
+    /* box-shadow: 5px 5px 10px gray; */
+    box-shadow: 2px 2px 5px gray;
 }
 
 .key:hover {
@@ -44,6 +45,8 @@
     margin-bottom: 20px;
 
     color: #7393B3;
+
+    border-top-right-radius: 5px;
 
 }
 
@@ -78,9 +81,11 @@
     justify-content: center;
     align-items: center;
 
-    /* background-color: blue; */
+    /* background-color: blue;  */
 
     margin: 5px;
+
+
 }
 
 #display{
@@ -104,8 +109,9 @@
 
     /* border: 1px solid black; */
 
-    margin: 5px;
+    margin: 15px;
 
+    box-shadow: 2px 2px 5px gray;
 }
 
 #t2{
